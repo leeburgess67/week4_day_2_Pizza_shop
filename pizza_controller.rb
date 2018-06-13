@@ -10,7 +10,11 @@ get '/pizza-orders' do
   erb( :index )
 end
 
-
+post '/pizza-orders/:id/update' do
+  @order = PizzaOrder.new(params)
+  @order.update()
+  erb( :update )
+end
 
 
 #new
@@ -23,6 +27,14 @@ get '/pizza-orders/:id' do
   @order = PizzaOrder.find(params[:id].to_i())
   erb( :show )
 end
+
+
+get '/pizza-orders/:id/edit' do
+  @order = PizzaOrder.find(params[:id].to_i())
+  erb ( :edit )
+
+end
+
 
 #CREATE
 post '/pizza-orders' do
@@ -39,3 +51,5 @@ post '/pizza-orders/:id/delete' do
   @order.delete
   redirect '/pizza-orders' #form posting to delete route
 end
+
+#edit
