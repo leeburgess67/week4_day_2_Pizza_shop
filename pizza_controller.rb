@@ -10,6 +10,10 @@ get '/pizza-orders' do
   erb( :index )
 end
 
+get '/pizza-orders/home' do
+  erb ( :home )
+end
+
 post '/pizza-orders/:id/update' do
   @order = PizzaOrder.new(params)
   @order.update()
