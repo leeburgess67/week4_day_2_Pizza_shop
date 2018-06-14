@@ -1,0 +1,7 @@
+html * {
+  text-align: center;
+  font-family: 'Sunflower', cursive;
+  font-size: 30px;
+  color: white;
+  background-color: rgba(74, 18, 130, 0.63)
+}
